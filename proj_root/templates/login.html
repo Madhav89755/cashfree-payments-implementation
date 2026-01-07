@@ -1,0 +1,17 @@
+{% include "base.html" %}
+{% block body %}
+
+<div class="container">
+    <h1>
+        Login
+    </h1>
+    <form action={% url "login-page" %} method='post'>
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Email Id</label>
+            <input type="email" class="form-control" id="emailid" name='emailid' placeholder="john@doe.com">
+        </div>
+        <button type="submit" class="btn btn-primary">Send Otp</button>
+    </form>
+</div>
+{% endblock body %}

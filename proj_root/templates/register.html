@@ -1,0 +1,29 @@
+{% include "base.html" %}
+{% block body %}
+
+<div class="container">
+    <h1>
+        Register User
+    </h1>
+    <form action={% url "register-page" %} method='post'>
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">First Name</label>
+            <input type="text" required class="form-control" id="first_name" name='first_name' placeholder="John">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Last Name</label>
+            <input type="text" required class="form-control" id="last_name" name='last_name' placeholder="Doe">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Email Id</label>
+            <input type="email" required class="form-control" id="emailid" name='emailid' placeholder="john@doe.com">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Phone Number</label>
+            <input type="number" required class="form-control" id="phone_no" name='phone_no' placeholder="1234567980">
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>
+{% endblock body %}

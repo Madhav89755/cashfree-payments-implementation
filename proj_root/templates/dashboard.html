@@ -1,0 +1,24 @@
+{% include "base.html" %}
+{% block body %}
+
+<div class="container">
+    <h1>
+        Dashboard - Create Payment
+    </h1>
+    <br>
+    <br>
+    <br>
+    <form method='post'>
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Descrpition</label>
+            <input type="text" class="form-control" id="descrpition" name='descrpition' placeholder="10">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Amount</label>
+            <input type="number" class="form-control" id="amount" name='amount' placeholder="10">
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>
+{% endblock body %}
